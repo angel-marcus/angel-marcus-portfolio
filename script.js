@@ -87,3 +87,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 });
+
+// Optimized Reveal Animation
+const revealOptions = {
+  threshold: 0.1, // Lower threshold for faster triggering
+  rootMargin: "0px 0px -50px 0px"
+};
+
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      // Use requestAnimationFrame for smoother performance
+      requestAnimationFrame(() => {
+        entry.target.classList.add('active');
+      });
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, revealOptions);

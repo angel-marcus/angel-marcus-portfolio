@@ -122,13 +122,23 @@ ul { list-style: none; }
 .footer__logo { font-weight: 800; font-size: 1.5rem; color: #ffffff !important; display: block; }
 .footer__logo span { color: var(--primary); }
 .footer__links h3 { color: #fff; margin-bottom: 1.5rem; }
-.footer__links ul li { margin-bottom: 10px; }
 .footer__bottom { border-top: 1px solid #1e293b; padding-top: 30px; display: flex; justify-content: space-between; align-items: center; }
 .footer__socials { display: flex; gap: 20px; }
-.footer__socials a { color: #fff; font-weight: 600; }
+.footer__socials a,
+.footer__links ul li a {
+  display: inline-block;
+  padding: 10px 0; /* Increases hit area without changing visual layout */
+  min-width: 44px;
+  min-height: 44px;
+}
 
 /* Mobile Menu Toggle */
-.menu-toggle { display: none; flex-direction: column; gap: 6px; background: none; border: none; cursor: pointer; }
+.menu-toggle {
+  padding: 12px; /* Standardizes the hit area to 48px+ */
+  min-width: 48px;
+  min-height: 48px;
+  display: none; /* Keep your existing flex logic in media queries */
+}
 .menu-toggle__bar { width: 28px; height: 3px; background: var(--dark); border-radius: 2px; }
 
 /* Responsive */
@@ -153,3 +163,10 @@ ul { list-style: none; }
 /* Animations */
 .reveal { opacity: 0; transform: translateY(30px); transition: 0.8s ease-out; }
 .reveal.active { opacity: 1; transform: translateY(0); }
+
+/* Enhanced Focus States for Keyboard Navigation */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+}
