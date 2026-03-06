@@ -174,9 +174,27 @@ ul { list-style: none; }
   .btn--large { width: 100%; }
 }
 
-/* Animations */
-.reveal { opacity: 0; transform: translateY(30px); transition: 0.8s ease-out; }
-.reveal.active { opacity: 1; transform: translateY(0); }
+/* Optimized Reveal: GPU Accelerated */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  will-change: opacity, transform; /* Tells the browser to prepare the GPU */
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Fix for Non-composited Animations */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+}
 
 /* Enhanced Focus States for Keyboard Navigation */
 a:focus-visible,
