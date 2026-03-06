@@ -60,7 +60,11 @@ ul { list-style: none; }
 .nav__link:hover { color: var(--primary); }
 
 /* Hero */
-.hero { padding: 6rem 0; }
+.hero {
+  min-height: 80vh; /* Reserves space before content loads */
+  display: flex;
+  align-items: center;
+}
 .hero__grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: center; }
 .badge { display: inline-block; background: #eff6ff; color: var(--primary); padding: 5px 12px; border-radius: 20px; font-weight: 700; margin-bottom: 1rem; font-size: 0.85rem; }
 .hero__title { font-size: 2.75rem; line-height: 1.1; color: var(--dark); margin-bottom: 1.5rem; }
@@ -157,14 +161,22 @@ ul { list-style: none; }
 
 @media (max-width: 768px) {
   .menu-toggle { display: flex; }
+  @media (max-width: 768px) {
   .nav {
-   transform:translateX(-100%);
-   transition:transform 0.3s ease;
-   }
+    visibility: hidden; /* Fixes accessibility focus issue */
+    pointer-events: none;
+    display: none; 
+  }
+  .nav.active {
+    visibility: visible;
+    pointer-events: auto;
+    display: block;
+  }
+}
 
-   .nav[aria-hidden="false"]{
-   transform:translateX(0);
-   }
+  .nav[aria-hidden="false"]{
+  transform:translateX(0);
+  }
   .nav__list { flex-direction: column; align-items: flex-start; gap: 30px; }
   .nav__link { font-size: 1.25rem; }
   .hero { padding: 4rem 0; }
@@ -220,11 +232,4 @@ button:focus-visible {
   aspect-ratio: 4 / 1;
   width: 160px;
   height: auto;
-}
-
-img {
-  display:block;
-  width:100%;
-  height:auto;
-  aspect-ratio:16/9;
 }

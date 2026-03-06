@@ -1,122 +1,45 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Angel Marcus | Performance-Driven Frontend Engineer</title>
-    <meta
-      name="description"
-      content="I build fast, accessible, conversion-focused landing pages. 100 Lighthouse scores, WCAG-aware, delivered fast."
-    />
-    <link rel="canonical" href="https://angelmarcus.dev/" />
-    <link rel="icon" href="images/favicon.png" type="image/png" />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Angel Marcus | Performance-Driven Frontend Engineer</title>
+  <meta name="description" content="I build fast, accessible, conversion-focused landing pages. 100 Lighthouse scores, WCAG-aware, delivered fast." />
+  <link rel="canonical" href="https://angelmarcus.dev/" />
+  <link rel="icon" href="images/favicon.png" type="image/png" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" display="swap" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
-      media="print"
-      onload="this.media = 'all'"
-    />
-    <link rel="preload" as="image" href="images/logo-light.webp">
-    <link rel="preload" as="style" href="style.css" />
-    <link
-      rel="stylesheet"
-      href="style.css"
-      media="print"
-      onload="this.media = 'all'"
-    />
-
-    <noscript>
-      <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
-      />
-      <link rel="stylesheet" href="style.css" />
-    </noscript>
-
-    <link
-      rel="preload"
-      href="images/logo.webp"
-      as="image"
-      fetchpriority="high"
-    />
-
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "name": "Frontend Web Development",
-        "provider": {
-          "@type": "Person",
-          "name": "Angel Marcus"
-        }
-      }
-    </script>
-  </head>
+  <link rel="stylesheet" href="style.css" />
+</head>
   <body>
     <a class="skip-link" href="#main">Skip to main content</a>
 
     <header class="header" role="banner">
-      <div class="container header__wrapper">
-        <a class="logo" href="#home" aria-label="Home - Angel Marcus">
-          <img
-            src="images/logo-light.webp"
-            alt="Angel Marcus Logo"
-            width="160"
-            height="40"
-            fetchpriority="high"
-            loading="eager"
-          />
-        </a>
+  <div class="container header__wrapper">
+    <a class="logo" href="#home" aria-label="Angel Marcus Home">
+      <img src="images/logo-light.webp" alt="Angel Marcus Logo" width="160" height="40" fetchpriority="high" />
+    </a>
 
-        <nav
-          id="nav-menu"
-          class="nav"
-          role="navigation"
-          aria-label="Primary Navigation"
-          aria-hidden="true"
-        >
-          <ul class="nav__list">
-            <li><a class="nav__link" href="#services">Services</a></li>
-            <li><a class="nav__link" href="#portfolio">Selected Work</a></li>
-            <li><a class="nav__link" href="#process">Process</a></li>
-            <li><a class="nav__link" href="#faq">FAQ</a></li>
-            <li>
-              <a
-                class="btn btn--small btn--primary"
-                href="https://www.fiverr.com/angelmarcus"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Hire Me</a
-              >
-            </li>
-          </ul>
-        </nav>
+    <nav id="nav-menu" class="nav" role="navigation" aria-label="Primary Navigation">
+      <ul class="nav__list">
+        <li><a class="nav__link" href="#services">Services</a></li>
+        <li><a class="nav__link" href="#portfolio">Selected Work</a></li>
+        <li><a class="nav__link" href="#process">Process</a></li>
+        <li><a class="nav__link" href="#faq">FAQ</a></li>
+        <li><a class="btn btn--small btn--primary" href="https://www.fiverr.com/angelmarcus" target="_blank" rel="noopener noreferrer">Hire Me</a></li>
+      </ul>
+    </nav>
 
-        <button
-          id="mobile-menu-btn"
-          class="menu-toggle"
-          type="button"
-          aria-controls="nav-menu"
-          aria-expanded="false"
-          aria-label="Open navigation menu"
-        >
-          <span class="menu-toggle__bar" aria-hidden="true"></span>
-          <span class="menu-toggle__bar" aria-hidden="true"></span>
-          <span class="menu-toggle__bar" aria-hidden="true"></span>
-        </button>
-      </div>
-    </header>
+    <button id="mobile-menu-btn" class="menu-toggle" type="button" aria-controls="nav-menu" aria-expanded="false" aria-label="Toggle navigation menu">
+      <span class="menu-toggle__bar"></span>
+      <span class="menu-toggle__bar"></span>
+      <span class="menu-toggle__bar"></span>
+    </button>
+  </div>
+</header>
 
     <main id="main" tabindex="-1">
       <section id="home" class="hero reveal">
@@ -227,22 +150,11 @@
           </div>
           <div class="portfolio-list">
             <article class="project-card reveal">
-              <div class="project-media">
-                <picture>
-                  <source
-                    srcset="images/radice-screenshot.webp"
-                    type="image/webp"
-                  />
-                  <img
-                    src="images/radice-screenshot.jpg"
-                    alt="Radice Dining landing page"
-                    width="900"
-                    height="600"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </picture>
-              </div>
+            <div class="project-media">
+            <img src="images/radice-screenshot.webp" alt="Radice Luxury Dining project preview" width="64" height="43" loading="lazy" decoding="async" />
+            </div>
+             <a class="text-link" href="https://radice-luxury-dining.vercel.app" target="_blank" rel="noopener noreferrer" aria-label="View Radice Dining live website">View Live →</a>
+          </div>
 
               <div class="project-info">
                 <span class="project-tag">Case Study: Radice</span>
@@ -275,23 +187,10 @@
             </article>
 
             <article class="project-card reveal">
-              <div class="project-media">
-                <picture>
-                  <source
-                    srcset="images/lumiere-screenshot.webp"
-                    type="image/webp"
-                  />
-                  <img
-                    src="images/lumiere-screenshot.jpg"
-                    alt="Lumiere landing page"
-                    width="900"
-                    height="600"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </picture>
-              </div>
-
+            <div class="project-media">
+             <img src="images/lumiere-screenshot.webp" alt="Lumiere landing page project preview" width="645" height="484" loading="lazy" decoding="async" />
+            </div>
+            <a class="text-link" href="https://lumiere-deployment-v1.vercel.app" target="_blank" rel="noopener noreferrer" aria-label="View Lumiere live website">View Live →</a>
               <div class="project-info">
                 <span class="project-tag">Case Study: Lumiere</span>
                 <h3>Accessible Booking Portal</h3>
