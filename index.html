@@ -252,6 +252,15 @@ button:focus-visible {
   height: auto;
 }
 
+.portfolio-card img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9; /* This keeps the image in a nice rectangle shape */
+  object-fit: cover;
+  display: block;
+  border-radius: 8px; /* Optional: matches your card style */
+}
+
   </style>
   
   </head>
@@ -392,7 +401,7 @@ button:focus-visible {
           <div class="portfolio-list">
             <article class="project-card reveal">
             <div class="project-media">
-            <img src="images/radice-screenshot.webp" alt="Radice Luxury Dining project preview" width="64" height="43" loading="lazy" decoding="async" />
+              <img src="images/radice.webp" alt="Radice Project" width="600" height="400" loading="lazy" style="width: 100%; height: auto; object-fit: cover; display: block;" />
             </div>
             <a class="text-link" href="https://radice-luxury-dining.vercel.app" target="_blank" rel="noopener noreferrer" aria-label="View Radice Luxury Dining live website">View Live →</a>
           </div>
