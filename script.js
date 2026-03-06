@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const menuBtn = document.getElementById('mobile-menu-btn');
   const nav = document.getElementById('nav-menu');
 
-  // 1. Optimized Mobile Menu (No layout thrashing)
+  // 1. Optimized Mobile Menu
   if (menuBtn && nav) {
     menuBtn.addEventListener('click', () => {
       const isOpen = nav.getAttribute('aria-hidden') === 'false';
@@ -12,13 +12,34 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 2. High-Performance Reveal Observer
-  // Using a larger rootMargin so elements prepare before they enter the screen
+  // 2. High-Performance Smooth Scroll (Reflow-Free)
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const targetId = this.getAttribute('href');
+      if (targetId === '#' || !targetId) return;
+      
+      const target = document.querySelector(targetId);
+      if (target) {
+        e.preventDefault();
+        // Browser handles the header offset via CSS scroll-padding-top
+        target.scrollIntoView({
+          behavior: 'smooth'
+        });
+        
+        // Accessibility: Move focus to the target
+        target.focus({ preventScroll: true });
+        if (document.activeElement !== target) {
+          target.setAttribute('tabindex', '-1');
+          target.focus({ preventScroll: true });
+        }
+      }
+    });
+  });
+
+  // 3. High-Performance Reveal Observer
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        // Use requestAnimationFrame to ensure the class is added 
-        // during the browser's next "quiet" moment
         requestAnimationFrame(() => {
           entry.target.classList.add('active');
         });
@@ -32,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-  // 3. Deferred FAQ Logic (Only runs if items exist)
+  // 4. Deferred FAQ Logic
   const faqQuestions = document.querySelectorAll('.faq-question');
   if (faqQuestions.length > 0) {
     faqQuestions.forEach(btn => {
