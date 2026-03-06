@@ -204,15 +204,36 @@ ul { list-style: none; }
   .footer__bottom { flex-direction: column; gap: 20px; }
 }
 
-/* ==================================================== */
-/* MOBILE RESPONSIVE (MAX-WIDTH: 768px)                 */
-/* ==================================================== */
 @media (max-width: 768px) {
-  /* Fixes Header Alignment */
   .header__wrapper {
-    flex-direction: row !important;
+    flex-direction: row !important; /* Force them to stay side-by-side */
     justify-content: space-between;
     align-items: center;
+    padding: 0.5rem 0;
+  }
+
+  .hero__grid {
+    grid-template-columns: 1fr; /* Switch from 2 columns to 1 */
+    text-align: center;
+    gap: 3rem;
+  }
+
+  .hero__title {
+    font-size: 2rem;
+  }
+
+  .hero__actions {
+    justify-content: center;
+  }
+
+
+  .menu-toggle {
+    display: flex; /* Show the burger menu button */
+    order: 2;
+  }
+
+  .logo {
+    order: 1;
   }
   
   .logo img { width: 120px; }
@@ -235,13 +256,40 @@ ul { list-style: none; }
     z-index: 1500;
   }
 
-  .nav.active,
-  .nav[aria-hidden="false"] {
-    transform: translateX(0);
+  .nav {
+    position: fixed;
+    top: var(--header-height);
+    right: 0;
+    width: 100%;
+    height: calc(100vh - var(--header-height));
+    background: var(--white);
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 2rem;
+    gap: 2rem;
+    transform: translateX(100%); /* Hide it off-screen to the right */
+    transition: transform 0.3s ease-in-out;
+    z-index: 999;
+    border-top: 1px solid #eee;
   }
 
-  .nav__list { flex-direction: column; gap: 30px; }
-  .nav__link { color: white !important; font-size: 1.5rem; }
+  .nav.active {
+    transform: translateX(0); /* Slide it in when active */
+    display: flex;
+  }
+
+  .nav__list {
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+  }
+
+  .nav__link {
+    font-size: 1.2rem;
+    width: 100%;
+    display: block;
+    text-align: center;
+  }
 
   /* Adjusts Spacing & Buttons */
   .hero { padding: 4rem 0; }
