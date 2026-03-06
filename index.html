@@ -1,55 +1,82 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Angel Marcus | Performance-Driven Frontend Engineer</title>
-  <meta name="description" content="I build fast, accessible, conversion-focused landing pages. 100 Lighthouse scores, WCAG-aware, delivered fast." />
-  <link rel="canonical" href="https://angelmarcus.dev/" />
-  <link rel="icon" href="images/favicon.png" type="image/png" />
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Angel Marcus | Performance-Driven Frontend Engineer</title>
+    <meta
+      name="description"
+      content="I build fast, accessible, conversion-focused landing pages. 100 Lighthouse scores, WCAG-aware, delivered fast."
+    />
+    <link rel="canonical" href="https://angelmarcus.dev/" />
+    <link rel="icon" href="images/favicon.png" type="image/png" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" media="print" onload="this.media='all'">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-  <link rel="preload" as="style" href="style.css" />
-  <link rel="stylesheet" href="style.css" media="print" onload="this.media='all'">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+      media="print"
+      onload="this.media = 'all'"
+    />
+    <link rel="preload" as="image" href="images/logo-light.webp">
+    <link rel="preload" as="style" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="style.css"
+      media="print"
+      onload="this.media = 'all'"
+    />
 
-  <noscript>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" />
-    <link rel="stylesheet" href="style.css" />
-  </noscript>
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+      />
+      <link rel="stylesheet" href="style.css" />
+    </noscript>
 
-  <link rel="preload" href="images/logo.webp" as="image" fetchpriority="high" />
+    <link
+      rel="preload"
+      href="images/logo.webp"
+      as="image"
+      fetchpriority="high"
+    />
 
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "Frontend Web Development",
-      "provider": {
-        "@type": "Person",
-        "name": "Angel Marcus"
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Frontend Web Development",
+        "provider": {
+          "@type": "Person",
+          "name": "Angel Marcus"
+        }
       }
-    }
-  </script>
-</head>
+    </script>
+  </head>
   <body>
     <a class="skip-link" href="#main">Skip to main content</a>
 
     <header class="header" role="banner">
       <div class="container header__wrapper">
         <a class="logo" href="#home" aria-label="Home - Angel Marcus">
-         <img 
-         src="images/logo-light.webp" 
-         alt="Angel Marcus Logo" 
-         width="160" 
-         height="40" 
-         fetchpriority="high" 
-         loading="eager"
-         >
+          <img
+            src="images/logo-light.webp"
+            alt="Angel Marcus Logo"
+            width="160"
+            height="40"
+            fetchpriority="high"
+            loading="eager"
+          />
         </a>
 
         <nav
@@ -201,13 +228,20 @@
           <div class="portfolio-list">
             <article class="project-card reveal">
               <div class="project-media">
-                <img
-                  src="images/radice-screenshot.webp"
-                  alt="Radice Dining landing page on mobile and desktop"
-                  width="900"
-                  height="600"
-                  loading="lazy"
-                />
+                <picture>
+                  <source
+                    srcset="images/radice-screenshot.webp"
+                    type="image/webp"
+                  />
+                  <img
+                    src="images/radice-screenshot.jpg"
+                    alt="Radice Dining landing page"
+                    width="900"
+                    height="600"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
               </div>
 
               <div class="project-info">
@@ -242,13 +276,20 @@
 
             <article class="project-card reveal">
               <div class="project-media">
-                <img
-                  src="images/lumiere-screenshot.webp"
-                  alt="Lumiere accessible booking system interface"
-                  width="900"
-                  height="600"
-                  loading="lazy"
-                />
+                <picture>
+                  <source
+                    srcset="images/lumiere-screenshot.webp"
+                    type="image/webp"
+                  />
+                  <img
+                    src="images/lumiere-screenshot.jpg"
+                    alt="Lumiere landing page"
+                    width="900"
+                    height="600"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
               </div>
 
               <div class="project-info">
@@ -384,14 +425,14 @@
       <div class="container footer__grid">
         <div class="footer__info">
           <a class="footer__logo" href="#home">
-            <img 
-            src="images/logo-light.webp" 
-            alt="Angel Marcus Logo" 
-            width="160" 
-            height="40" 
-            fetchpriority="high" 
-            loading="eager"
-            >
+            <img
+              src="images/logo-light.webp"
+              alt="Angel Marcus Logo"
+              width="160"
+              height="40"
+              fetchpriority="high"
+              loading="eager"
+            />
           </a>
           <p class="mt-1 text-light">
             Building the fast, accessible future of the web.

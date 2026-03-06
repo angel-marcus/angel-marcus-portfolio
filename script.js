@@ -45,3 +45,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 });
+
+// FAQ toggle
+document.querySelectorAll(".faq-question").forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    const expanded = btn.getAttribute("aria-expanded") === "true";
+
+    btn.setAttribute("aria-expanded", !expanded);
+
+    const answer = btn.nextElementSibling;
+
+    if(!expanded){
+      answer.style.maxHeight = answer.scrollHeight + "px";
+    } else {
+      answer.style.maxHeight = null;
+    }
+  });
+});
