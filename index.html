@@ -156,59 +156,59 @@ ul { list-style: none; }
 .text-link { font-weight: 700; color: var(--primary); border-bottom: 2px solid transparent; }
 .text-link:hover { border-color: var(--primary); }
 
-.portfolio__content .btn {
-  margin-top: auto;          /* NEW: Pushes the button to the absolute bottom of the card */
-  align-self: flex-start;    /* Keeps the button from stretching the full width of the card */
-}
 
-/* 1. Force the Image Container to a fixed Aspect Ratio */
+/* FORCE ALL IMAGES TO SAME HEIGHT */
 .portfolio__img {
   width: 100%;
-  aspect-ratio: 16 / 9; /* This ensures every image box is identical */
+  aspect-ratio: 16 / 9; /* Every image box will now be identical */
   overflow: hidden;
-  background: #f0f0f0; /* Placeholder color while loading */
+  background: #f1f5f9;
 }
 
 .portfolio__img img {
   width: 100%;
-  height: 100%;       /* Changed from auto to 100% */
-  object-fit: cover;  /* This crops the image to fit the 16:9 box without stretching */
+  height: 100%;
+  object-fit: cover; /* This prevents stretching while filling the 16:9 box */
   display: block;
 }
 
-/* 2. Fix the Card and Content height */
+/* FORCE ALL CARDS TO SAME HEIGHT */
 .portfolio__card {
   background: var(--white);
   border-radius: 12px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  height: 100%; /* Ensures all cards in a row are the same height */
+  height: 100%; /* Ensures all cards in a row match the tallest one */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
 .portfolio__content {
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
-  flex-grow: 1; /* This pushes the button down */
+  flex: 1; /* This is the "Engine": it makes the content area fill the card */
 }
 
-/* 3. The "Text Alignment" Secret */
+/* THE ALIGNMENT SECRET */
 .portfolio__content p {
-  flex-grow: 1; /* NEW: This forces the paragraph area to expand, 
-                   pushing the tags and button to the exact same 
-                   spot on every card regardless of text length */
-  margin-bottom: 1rem;
+  flex: 1; /* This forces the paragraph to take up all available vertical space */
+  margin-bottom: 1.5rem;
+  color: var(--text-light);
+  line-height: 1.6;
 }
 
 .portfolio__content .tags {
-  margin-top: auto; /* Ensures tags stay together above the button */
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 .portfolio__content .btn {
+  margin-top: auto; /* Final insurance: pushes button to the very bottom */
   align-self: flex-start;
-}
+} 
 
 .tags {
   display: flex;
@@ -313,21 +313,6 @@ ul { list-style: none; }
   .menu-toggle { display: flex; }
 
   /* Pulls Nav Out of Header Flow */
-  .nav {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 80%;
-    height: 100vh;
-    background: var(--dark);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transform: translateX(100%);
-    transition: transform 0.3s ease-in-out;
-    z-index: 1500;
-  }
 
   .nav {
     position: fixed;
@@ -376,7 +361,7 @@ ul { list-style: none; }
     <a class="skip-link" href="#main">Skip to main content</a>
 
     <header class="header" role="banner">
-  <div class="container header__wrapper">
+  <div class="container header__wrapper container">
     <a class="logo" href="#home" aria-label="Angel Marcus Home">
       <img src="images/logo-light.webp" alt="Angel Marcus Logo" width="160" height="40" fetchpriority="high" />
     </a>
