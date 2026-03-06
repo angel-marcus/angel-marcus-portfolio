@@ -15,7 +15,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 80px; /* This replaces the JS calculation */
+  scroll-padding-top: 90px; /* Adjust this to match your header height */
 }
 
 /* Base Reset */
@@ -224,8 +224,8 @@ button:focus-visible {
   contain: layout;
 }
 
-.header__logo img, .footer__logo img {
-  height: 40px;
-  width: auto;
-  aspect-ratio: 150 / 40; /* Crucial for preventing CLS */
+.logo img, .footer__logo img {
+  aspect-ratio: 4 / 1;
+  width: 160px;
+  height: auto;
 }
