@@ -252,13 +252,25 @@ button:focus-visible {
   height: auto;
 }
 
+.portfolio-grid {
+  display: grid;
+  /* This line below is the magic: it tells the browser to 
+     use 1 column on mobile and 2 on desktop automatically */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+} 
+
 .portfolio-card img {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 16 / 9; /* This keeps the image in a nice rectangle shape */
-  object-fit: cover;
+  width: 100%;       /* Forces image to fill the card width */
+  height: 250px;     /* Set a fixed height for mobile consistency */
+  object-fit: cover; /* Prevents the image from looking stretched */
   display: block;
-  border-radius: 8px; /* Optional: matches your card style */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px; /* This creates the "breathable" space on phone sides */
 }
 
   </style>
