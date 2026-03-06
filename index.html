@@ -34,6 +34,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 90px; /* Adjust this to match your header height */
+  overflow-x: hidden
 }
 
 /* Base Reset */
@@ -169,36 +170,64 @@ ul { list-style: none; }
 
 /* Responsive */
 @media (max-width: 992px) {
-  .hero__grid, .project-card, .footer__grid { grid-template-columns: 1fr; text-align: center; }
+  @media (max-width: 992px) {
+  .hero__grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+    padding-top: 20px;
+  }
+
+  .hero__proof {
+    order: 2; /* Moves the 90+ score card below the text */
+  }
+
+  .hero__content {
+    order: 1;
+    width: 100%;
+  }
+
+  .hero__title {
+    font-size: 2rem; /* Prevents text from being too large on small screens */
+  }
+}
+  .project-card, .footer__grid { grid-template-columns: 1fr; text-align: center; }
   .hero__actions, .project-metrics { justify-content: center; }
   .grid-3 { grid-template-columns: 1fr; }
-  .hero__title { font-size: 2.25rem; }
   .footer__bottom { flex-direction: column; gap: 20px; }
 }
 
 @media (max-width: 768px) {
   .menu-toggle { display: flex; }
-   @media (max-width: 768px) {
+  @media (max-width: 768px) {
   .nav {
     position: fixed;
     top: 0;
     right: 0;
-    width: 280px;
+    width: 80%; /* Takes up most of the screen */
     height: 100vh;
     background: var(--dark);
-    padding: 80px 40px;
-    transform: translateX(100%); /* Hides it off-screen */
-    transition: transform 0.3s ease;
-    z-index: 1000;
+    display: flex; /* Ensure it's flex when active */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
   }
 
   .nav.active {
-    transform: translateX(0); /* Slides it in when active */
+    transform: translateX(0); /* Slides the menu in */
   }
 
   .nav__list {
     flex-direction: column;
-    gap: 2rem;
+    gap: 30px;
+  }
+
+  .nav__link {
+    color: white !important;
+    font-size: 1.5rem;
   }
 }
 
@@ -206,7 +235,6 @@ ul { list-style: none; }
   transform:translateX(0);
   }
 
-  .nav__link { font-size: 1.25rem; }
   .hero { padding: 4rem 0; }
   .btn--large { width: 100%; }
 }
@@ -285,11 +313,17 @@ button:focus-visible {
 }
 
 @media (max-width: 768px) {
-  .hero__wrapper {
-    flex-direction: column;
-    text-align: center;
-    padding-top: 2rem;
+  .header__wrapper {
+    flex-direction: row !important; /* Forces logo and menu to stay side-by-side */
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
   }
+
+  .logo img {
+    width: 120px; /* Smaller logo for mobile screens */
+  }
+}
 
   .hero__content h1 {
     font-size: 2.5rem; /* Reduces font size so it fits on one screen */
