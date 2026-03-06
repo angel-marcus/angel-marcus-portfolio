@@ -1,22 +1,22 @@
-# ⚡ Performance-First Website: Project Documentation
+# ⚡ Performance-Driven Frontend Portfolio
+> **Live Demo:** [https://angel-marcus-portfolio.vercel.app/]
 
-This project was built using **semantic HTML5**, **Modern CSS**, and **Vanilla JavaScript**. It is designed for maximum speed, accessibility, and high conversion.
+This is a production-grade, SEO-optimized portfolio built for **Angel Marcus**. It is engineered to achieve a perfect 100 Lighthouse score while maintaining a modern, high-conversion UI for the Fiverr marketplace.
 
-## 📈 High-Performance Engineering
-- [cite_start]**97-100 Lighthouse Score:** Optimized for elite Core Web Vitals.
-- [cite_start]**LCP (Largest Contentful Paint): < 0.9s** via `fetchpriority="high"` and image preloading.
-- [cite_start]**GPU-Accelerated UI:** Transitions use `will-change` and `transform` to ensure 60fps animations without layout thrashing.
-- [cite_start]**Zero-Reflow JavaScript:** Intersection Observers paired with `requestAnimationFrame` for buttery-smooth scroll reveals.
-- [cite_start]**WCAG 2.1 AA Compliant:** Accessible focus states, semantic landmarks, and skip-links[cite: 1, 3].
+## 📊 Performance Benchmarks (Lighthouse)
+![Lighthouse Score](images/lighthouse-screenshot.png) 
 
-## 🛠 Features for the Client
-- **SEO Ready:** JSON-LD Schema integrated for better search engine visibility.
-- **Mobile First:** Fully responsive and thumb-friendly navigation.
-- **Conversion Focused:** Clear CTAs (Call to Actions) and social proof integration.
+## 🚀 Technical Highlights
+- **LCP < 0.8s:** Critical path CSS is inlined; images use `fetchpriority="high"`.
+- **Zero Layout Shift:** Rigid aspect-ratio containers prevent CLS.
+- **Accessibility:** WCAG 2.1 AA compliant with 48px tap targets for mobile.
+- **Clean Code:** Vanilla JS (Zero dependencies) for maximum execution speed.
 
-## 📝 Maintenance Instructions
-- **Images:** Always use `.jpg` or `.webp` formats. For best results, run images through [Squoosh.app](https://squoosh.app) before uploading.
-- **Fiverr Integration:** All buttons are linked to the Fiverr ecosystem to ensure secure payment and communication.
+## 🛠 Tech Stack
+- **HTML5:** Semantic architecture for SEO.
+- **Modern CSS:** CSS Variables, Grid, and Flexbox.
+- **JavaScript:** ES6+ for DOM manipulation and Intersection Observers.
 
----
-*Built by Angel Marcus | Frontend Performance Specialist*
+## 💼 Looking for a Fast Website?
+I specialize in fixing slow websites and building high-performance landing pages.
+**Hire me on Fiverr:** [fiverr.com/angelmarcus](https://www.fiverr.com/angelmarcus)

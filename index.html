@@ -79,7 +79,15 @@ ul { list-style: none; }
 
 /* Header */
 .header { position: fixed; top: 0; left: 0; right: 0; height: var(--header-height); background: rgba(255,255,255,0.9); backdrop-filter: blur(10px); z-index: 1000; border-bottom: 1px solid #eef2f7; display: flex; align-items: center; }
-.header__wrapper { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+.header__wrapper { 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  width: 100%; 
+  padding: 0 1.5rem; /* This prevents the "sticking to the wall" issue */
+  max-width: 1200px;
+  margin: 0 auto;
+}
 .logo { font-weight: 800; font-size: 1.25rem; color: var(--dark); }
 .logo img { aspect-ratio: 4 / 1; width: 160px; height: auto; }
 .nav__list { display: flex; gap: 20px; align-items: center; }
@@ -206,10 +214,12 @@ ul { list-style: none; }
 
 @media (max-width: 768px) {
   .header__wrapper {
-    flex-direction: row !important; /* Force them to stay side-by-side */
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.5rem 0;
+    padding: 0 1rem; /* Slightly tighter for small phones */
+    flex-direction: row !important; /* Keep logo and burger in a line */
+  }
+  
+  .logo img {
+    width: 130px; /* Scaling down slightly for better fit */
   }
 
   .hero__grid {
@@ -236,7 +246,6 @@ ul { list-style: none; }
     order: 1;
   }
   
-  .logo img { width: 120px; }
   .menu-toggle { display: flex; }
 
   /* Pulls Nav Out of Header Flow */
