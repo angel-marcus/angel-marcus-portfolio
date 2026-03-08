@@ -4,7 +4,7 @@
 This is a production-grade, SEO-optimized portfolio built for **Angel Marcus**. It is engineered to achieve a perfect 100 Lighthouse score while maintaining a modern, high-conversion UI for the Fiverr marketplace.
 
 ## 📊 Performance Benchmarks (Lighthouse)
-![Lighthouse Score](images/lighthouse-screenshot.png) 
+![Lighthouse Score](images/lighthouse_screenshot.png) 
 
 ## 🚀 Technical Highlights
 - **LCP < 0.8s:** Critical path CSS is inlined; images use `fetchpriority="high"`.
